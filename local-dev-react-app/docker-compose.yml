@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  react-app:
+    stdin_open: true
+    build:
+      context: '../react-app'
+    ports:
+      - '3000:3000'
+    volumes:
+      - '../react-app:/home/node/app:delegated'
+    command: 'run start'
+    container_name: 'react-app'
