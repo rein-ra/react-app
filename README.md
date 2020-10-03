@@ -11,3 +11,5 @@ docker-compose run --rm --no-deps --entrypoint yarn react-app install
 ```
 docker-compose up -d
 ```
+
+- Juhul kui hot reload ei tööta siis asenda `package.json` failis, start käsu sisu `react-scripts start` järgmise vastu  `CHOKIDAR_USEPOLLING=true react-scripts start` 
