@@ -1,3 +1,4 @@
+@import '~antd/dist/antd.css';
 .App {
   text-align: center;
 }
@@ -35,4 +36,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.app-header{
+  color: darkgray;
+  background-color: lightgray;
+}
+
+.app-content{
+  padding: 10px;
 }
