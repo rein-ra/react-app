@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Input, Button } from 'antd';
-import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import { UserOutlined } from '@ant-design/icons';
+import TestTable, { number } from './TestTable';
 
-const HorizontalLoginForm = () => {
+const TopicForm = () => {
   const [form] = Form.useForm();
   const [, forceUpdate] = useState();
 
@@ -12,26 +13,17 @@ const HorizontalLoginForm = () => {
   }, []);
 
   const onFinish = values => {
-    console.log('Finish:', values);
+    console.log('Salvestatud: ', values);
+    
   };
 
   return (
     <Form form={form} name="horizontal_login" layout="inline" onFinish={onFinish}>
       <Form.Item
-        name="username"
-        rules={[{ required: true, message: 'Palun sisesta oma kasutajanimi!' }]}
+        name="topic"
+        rules={[{ required: true, message: 'Palun sisestage pealkiri!' }]}
       >
-        <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Kasutajanimi" />
-      </Form.Item>
-      <Form.Item
-        name="password"
-        rules={[{ required: true, message: 'Palun sisesta oma parool!' }]}
-      >
-        <Input
-          prefix={<LockOutlined className="site-form-item-icon" />}
-          type="password"
-          placeholder="Parool"
-        />
+        <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Pealkiri" />
       </Form.Item>
       <Form.Item shouldUpdate={true}>
         {() => (
@@ -43,7 +35,7 @@ const HorizontalLoginForm = () => {
               form.getFieldsError().filter(({ errors }) => errors.length).length
             }
           >
-            Logi sisse
+            Salvesta
           </Button>
         )}
       </Form.Item>
@@ -51,5 +43,5 @@ const HorizontalLoginForm = () => {
   );
 };
 
-//ReactDOM.render(<HorizontalLoginForm />, mountNode);
-export default HorizontalLoginForm
+
+export default TopicForm
